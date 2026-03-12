@@ -841,3 +841,248 @@ hr {
     height: auto;
 }
 
+  /* --- Main Header Styling --- */
+    .main-header {
+        background-color: #2f7d6d;
+        background-image: linear-gradient(to right, #2f7d6d, #256559);
+        color: #fff;
+        padding: 12px 5%;
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+    }
+
+    /* Logo Area */
+    .logo-area {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .logo-area img {
+        width: 50px;       
+        height: 50px;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+
+    .logo-area div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo-area h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.6rem;
+        color: #fff;
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    .logo-area .tagline {
+        font-size: 0.75rem;
+        opacity: 0.9;
+        font-style: italic;
+        color: #e0e0e0;
+    }
+
+    /* Navigation */
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    nav a {
+        color: #fff;
+        font-weight: 500;
+        font-size: 0.95rem;
+        padding: 8px 12px;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+        background: rgba(255, 255, 255, 0.15);
+    }
+
+    /* Add Recipe Button Style */
+    nav a[href*="add-recipe"] {
+        background-color: #fcfbf9;
+        color: #2f7d6d !important;
+        font-weight: 700;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+    nav a[href*="add-recipe"]:hover {
+        background-color: #ffffff;
+        transform: translateY(-2px);
+    }
+
+    /* Sign Out Button Style */
+    .sign-out {
+        background-color: #e74c3c !important; 
+        color: white !important;
+        padding: 8px 15px !important;
+    }
+
+    .sign-out:hover {
+        background-color: #c0392b !important;
+        transform: scale(1.05);
+    }
+
+    /* --- Responsive Header (Mobile Fix) --- */
+    @media (max-width: 768px) {
+        .main-header {
+            flex-direction: column; 
+            padding: 20px;
+            gap: 15px;
+        }
+
+        .logo-area {
+            margin-bottom: 5px;
+        }
+
+        nav {
+            flex-wrap: wrap;      
+            justify-content: center;
+            width: 100%;
+            gap: 10px;
+        }
+
+        nav a {
+            font-size: 0.85rem;
+            padding: 6px 10px;
+        }
+    }
+ 
+    .main-header {
+        height: 80px !important;      
+        align-items: center !important;
+        padding: 0 5% !important;
+    }
+
+    .logo-area {
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;        
+    }
+
+    .logo-area img {
+        width: 50px !important;        
+        height: 50px !important;
+        object-fit: cover !important;
+    }
+
+    .logo-area div {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+    }
+
+    .logo-area h1 {
+        margin: 0 !important;         
+        padding: 0 !important;
+        line-height: 1.1 !important;   
+        font-size: 1.6rem !important;  
+    }
+
+    .logo-area .tagline {
+        margin: 0 !important;          
+        margin-top: 2px !important;    
+        line-height: 1 !important;
+        font-size: 0.75rem !important;
+        display: block !important;
+    }
+.main-header {
+    background-color: #2f7d6d !important;
+    background-image: linear-gradient(to right, #2f7d6d, #256559) !important;
+    color: #fff !important;
+    padding: 0 5% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    height: 80px !important;
+    width: 100% !important;
+}
+
+.logo-area {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+.logo-area img {
+    width: 50px !important;
+    height: 50px !important;
+    object-fit: cover !important;
+    border-radius: 6px !important;
+}
+
+.logo-area div {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+}
+
+.logo-area h1 {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 1.6rem !important;
+    color: #fff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.1 !important;
+}
+
+.logo-area .tagline {
+    font-size: 0.75rem !important;
+    opacity: 0.9 !important;
+    font-style: italic !important;
+    color: #e0e0e0 !important;
+    margin: 0 !important;
+    margin-top: 2px !important;
+    display: block !important;
+    line-height: 1 !important;
+}
+
+nav {
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+}
+
+nav a {
+    color: #fff !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    font-size: 0.95rem !important;
+    padding: 8px 12px !important;
+    border-radius: 6px !important;
+    transition: all 0.3s ease !important;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+}
+
+nav a[href*="add-recipe"] {
+    background-color: #fcfbf9 !important;
+    color: #2f7d6d !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15) !important;
+}
+
+.sign-out {
+    background-color: #e74c3c !important;
+    color: white !important;
+    padding: 8px 15px !important;
+}
