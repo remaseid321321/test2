@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Saudi Healthy Recipe</title>
+<link rel="stylesheet" href="app.css">
+  
+</head>
+<body>
+
+<header class="main-header">
+
+    <div class="logo-area">
+        <img src="photo/logo.jpeg" alt="Logo">
+        <div>
+            <h1>من دارنا</h1>
+            <span class="tagline">Healthy Saudi Cuisine</span>
+        </div>
+    </div>
+
+    <nav>
+        <a href="user.html">Home</a>
+        <a href="my-recipes.html">My Recipes</a>
+        <a href="add-recipe.html" class="add-recipe-btn">Add Recipe</a>
+        <a href="index.html" class="sign-out">Sign Out</a>
+    </nav>
+
+</header>
+<div class="container">
+    <h2>Add New Healthy Saudi Recipe</h2>
+
+    <form action="my-recipes.html">
+        
+        <label>Recipe Name:</label>
+        <input class="form-input" type="text" placeholder="e.g., Healthy Jareesh" required>
+
+        <label>Category:</label>
+        <select class="form-input" required>
+            <option value="">-- Choose Category --</option>
+            <option>Main Dishes </option>
+            <option>Healthy Sweets</option>
+            <option>Traditional Appetizers</option>
+            <option>Other</option>
+        </select>
+
+        <label>Description:</label>
+        <textarea class="form-input" placeholder="Briefly describe the recipe..." required></textarea>
+
+        <label>Upload Recipe Photo:</label>
+        <input type="file" accept="image/*" required>
+
+        <hr>
+
+        <h3>Ingredients:</h3>
+        <div id="ingredients-container">
+            <div class="ingredient-row">
+                <input type="text" class="form-input" placeholder="Ingredient Name (e.g., Oats)" required>
+                <input type="text" class="form-input" placeholder="Quantity (e.g., 2 cups)" required>
+            </div>
+        </div>
+        <button type="button" class="secondary-btn" onclick="addIngredient()">+ Add another ingredient</button>
+
+        <hr>
+
+        <h3>Instructions:</h3>
+        <div id="instructions-container">
+            <div class="step-row">
+                <label>Step 1:</label>
+                <input type="text" class="form-input" placeholder="Describe the first step" required>
+            </div>
+        </div>
+        <button type="button" class="secondary-btn" onclick="addStep()">+ Add another step</button>
+
+        <hr>
+
+        <h3>Video Content (Optional):</h3>
+        <label>Upload Video File:</label>
+        <input type="file" accept="video/*">
+        
+        <label>Or YouTube / Video URL:</label>
+        <input type="url" class="form-input" placeholder="https://www.youtube.com/...">
+
+        <br><br>
+        <button type="submit" class="submit-btn">Add Recipe</button>
+    </form>
+</div>
+
+<script src="recipes.js"></script>
+
+<footer class="main-footer">
+    <div class="footer-content">
+        <p>© 2026 Min Darna – Healthy Saudi Cuisine</p>
+        <p>Inspired by Saudi home kitchens with a healthy twist 🌿</p>
+    </div>
+</footer>
+
+</body>
+</html>
+

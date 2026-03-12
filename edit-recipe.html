@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Recipe - Healthy Saudi Cuisine</title>
+<link rel="stylesheet" href="app.css">
+
+</head>
+<body>
+<header class="main-header">
+
+    <div class="logo-area">
+        <img src="photo/logo.jpeg" alt="Logo">
+        <div>
+            <h1>من دارنا</h1>
+            <span class="tagline">Healthy Saudi Cuisine</span>
+        </div>
+    </div>
+
+    <nav>
+        <a href="user.html">Home</a>
+        <a href="my-recipes.html">My Recipes</a>
+        <a href="add-recipe.html" class="add-recipe-btn">Add Recipe</a>
+        <a href="index.html" class="sign-out">Sign Out</a>
+    </nav>
+
+</header>
+
+<div class="container">
+    <h2>Edit Recipe</h2>
+
+    <form action="my-recipes.html">
+        
+        <label>Name:</label>
+        <input class="form-input" type="text" value="Oat Jareesh" required>
+
+        <label>Category:</label>
+        <select class="form-input" required>
+            <option selected>Main Dishes </option>
+            <option>Healthy Sweets</option>
+            <option>Traditional Appetizers</option>
+        </select>
+
+        <label>Description:</label>
+        <textarea class="form-input" required>A healthy, fiber-rich version of the traditional Saudi Jareesh using whole-grain oats instead of crushed wheat, served with low-fat Greek yogurt.</textarea>
+
+        <label>Current Photo:</label>
+        <div class="current-media">
+            <img src="photo/jareesh.jpg" alt="Current Jareesh Photo" class="recipe-current-photo">
+        </div>
+
+        <label>Upload New Recipe Photo (Optional):</label>
+        <input type="file" accept="image/*">
+
+        <hr>
+
+        <h3>Ingredients:</h3>
+        <div id="ingredients-container">
+            <div class="ingredient-row">
+                <input type="text" class="form-input" value="Steel-cut Oats" required>
+                <input type="text" class="form-input" value="2 cups" required>
+            </div>
+            <div class="ingredient-row">
+                <input type="text" class="form-input" value="Greek Yogurt (Low-fat)" required>
+                <input type="text" class="form-input" value="1 liter" required>
+            </div>
+            <div class="ingredient-row">
+                <input type="text" class="form-input" value="Chicken breast" required>
+                <input type="text" class="form-input" value="500g" required>
+            </div>
+        </div>
+        <button type="button" class="add-btn" class="add-btn dark-add-btn" onclick="addIngredient()">+ Add another ingredient</button>
+
+        <hr>
+
+        <h3>Instructions:</h3>
+        <div id="instructions-container">
+            <div class="step-row">
+                <label>Step 1:</label>
+                <input type="text" class="form-input" value="Sauté onions and chicken until golden." required>
+            </div>
+            <div class="step-row">
+                <label>Step 2:</label>
+                <input type="text" class="form-input" value="Add oats and water, then simmer for 40 minutes." required>
+            </div>
+        </div>
+        <button type="button" class="add-btn" class="add-btn dark-add-btn" onclick="addStep()">+ Add another step</button>
+
+        <hr>
+
+        <label>Current Video:</label>
+        <div class="current-media">
+            <p><i>[jareesh_cooking_video.mp4]</i></p>
+        </div>
+
+        <label>Video URL:</label>
+        <input type="url" class="form-input" value="https://www.tiktok.com/@joharh_/video/7210876805094378753">
+
+        <br><br>
+        <button type="submit" class="add-btn" class="add-btn full-width-btn">Update Recipe</button>
+    </form>
+</div>
+
+<script src="recipes.js"></script>
+
+<footer class="main-footer">
+    <div class="footer-content">
+        <p>© 2026 Min Darna – Healthy Saudi Cuisine</p>
+        <p>Inspired by Saudi home kitchens with a healthy twist 🌿</p>
+    </div>
+</footer>
+
+</body>
+</html>
+

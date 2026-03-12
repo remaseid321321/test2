@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Page</title>
+<link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+<header class="main-header">
+
+    <div class="logo-area">
+        <img src="photo/logo.jpeg" alt="Logo">
+        <div>
+            <h1>من دارنا</h1>
+            <span class="tagline">Healthy Saudi Cuisine</span>
+        </div>
+    </div>
+
+    <nav>
+        <a href="user.html">Home</a>
+        <a href="my-recipes.html">My Recipes</a>
+        <a href="add-recipe.html" class="add-recipe-btn">Add Recipe</a>
+        <a href="index.html" class="sign-out">Sign Out</a>
+    </nav>
+
+</header><section class="welcome-wrap">
+<h2>Welcome, <strong id="displayFirstName">Sarah</strong></h2>
+</section>
+
+<section class="section-box">
+<h3>My Information</h3>
+
+<div class="info-row">
+<div>
+<p><strong>First name:</strong> <span id="infoFirstName">Sarah</span></p>
+<p><strong>Last name:</strong> Mohammed</p>
+<p><strong>Email:</strong> SarahM@example.com</p>
+</div>
+
+<img class="profile-photo" src="icon.png" alt="User Photo" width="110">
+</div>
+</section>
+
+<section class="section-box">
+<h3><a href="my-recipes.html">My Recipes</a></h3>
+
+<p><strong>Total number of recipes:</strong> 15</p>
+<p><strong>Total likes for all user’s recipes:</strong> 132</p>
+</section>
+
+<section class="section-box">
+<h3>All Available Recipes</h3>
+
+<div class="filter-row">
+<select>
+<option value="all">All categories</option>
+<option value="najdi">Healthy Najdi</option>
+<option value="hijazi">Healthy Hijazi</option>
+<option value="dessert">Healthy Desserts</option>
+</select>
+
+<button type="button">Filter</button>
+</div>
+
+<div class="table-container">
+<table class="recipes-table">
+<thead>
+<tr>
+<th>Recipe’s name</th>
+<th>Recipe’s photo</th>
+<th>Recipe creator’s name and photo</th>
+<th>Total number of likes</th>
+<th>Category</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><a href="view-recipe.html"> Jareesh </a></td>
+<td>
+<img class="recipe-img" src="photo/jareesh.jpg" alt="Recipe Photo">
+</td>
+<td>
+<div class="creator-cell">
+<img class="creator-img" src="icon.png" alt="Creator Photo">
+<span>Sarah Ahmed</span>
+</div>
+</td>
+<td>40</td>
+<td>Healthy Najdi</td>
+</tr>
+
+<tr>
+<td><a href="view-recipe2.html">Light Saleeg</a></td>
+<td>
+<img class="recipe-img" src="photo/saleeq.webp" alt="Recipe Photo">
+</td>
+<td>
+<div class="creator-cell">
+<img class="creator-img" src="icon.png" alt="Creator Photo">
+<span>Lina A.</span>
+</div>
+</td>
+<td>28</td>
+<td>Healthy Hijazi</td>
+</tr>
+
+<tr>
+<td><a href="view-recipe3.html"> Date Energy Bites </a></td>
+<td>
+<img class="recipe-img" src="photo/dates.jpeg" alt="Recipe Photo">
+</td>
+<td>
+<div class="creator-cell">
+<img class="creator-img" src="icon.png" alt="Creator Photo">
+<span>Raghad M.</span>
+</div>
+</td>
+<td>55</td>
+<td>Healthy Desserts</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="section-box">
+<h3>My Favourite Recipes ♥</h3>
+
+<div class="table-container">
+<table class="recipes-table">
+<thead>
+<tr>
+<th>Recipe’s name</th>
+<th>Recipe’s photo</th>
+<th>Remove</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><a href="view-recipe.html"> Jareesh </a></td>
+<td>
+<img class="recipe-img" src="photo/jareesh.jpg" alt="Recipe Photo">
+</td>
+<td><a class="remove-link" href="user.html">Remove</a></td>
+</tr>
+
+<tr>
+<td><a href="view-recipe.html">Date Energy Bites </a></td>
+<td>
+<img class="recipe-img" src="photo/dates.jpeg" alt="Recipe Photo">
+</td>
+<td><a class="remove-link" href="user.html">Remove</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<div class="bottom-signout">
+<a class="signout-link" href="index.html">Sign out</a>
+</div>
+
+<footer class="main-footer">
+    <div class="footer-content">
+        <p>© 2026 Min Darna – Healthy Saudi Cuisine</p>
+        <p>Inspired by Saudi home kitchens with a healthy twist 🌿</p>
+    </div>
+</footer>
+
+<script>
+    window.onload = function() {
+        const firstName = localStorage.getItem('firstName');
+        if (firstName) {
+            // تحديث الاسم في الترحيب
+            if(document.getElementById('displayFirstName')) {
+                document.getElementById('displayFirstName').textContent = firstName;
+            }
+            // تحديث الاسم في جدول المعلومات
+            if(document.getElementById('infoFirstName')) {
+                document.getElementById('infoFirstName').textContent = firstName;
+            }
+        }
+    };
+</script>
+
+</body>
+</html>

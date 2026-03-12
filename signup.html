@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<header class="hero-header">
+  <h1 class="arabic-title"><a href="index.html">من دارنا</a></h1>
+  <p class="english-title">Healthy Saudi Cuisine</p>
+</header>
+
+<section class="form-card">
+  <h2>Create Account</h2>
+  <p class="muted">All fields are required except profile image.</p>
+
+  <form id="signupForm" action="user.html" method="get">
+
+    <div class="grid-2">
+      <div class="field">
+        <label for="firstName">First Name</label>
+        <input id="firstName" class="form-input" type="text" placeholder="Sarah" required>
+      </div>
+
+      <div class="field">
+        <label for="lastName">Last Name</label>
+        <input id="lastName" class="form-input" type="text" placeholder="Mohammed" required>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" class="form-input" type="email" placeholder="sarah@example.com" required>
+    </div>
+
+    <div class="field">
+      <label for="password">Password</label>
+      <input id="password" class="form-input" type="password" placeholder="Create a password" required>
+    </div>
+
+    <div class="field">
+      <label>Profile Image (Optional)</label>
+
+      <div class="profile-upload">
+        <img id="profilePreview" class="profile-preview" src="user.png" alt="Default profile">
+        <div class="upload-side">
+          <input id="profileImage" type="file" accept="image/*">
+          <small class="muted">If you don’t upload, the default image will be used.</small>
+        </div>
+      </div>
+    </div>
+
+    <button class="primary-btn full" type="submit">Create Account</button>
+
+    <div class="below-links">
+      <a href="login.html">Already have an account? Log in</a>
+      <span class="dot">•</span>
+      <a href="index.html">Back to Home</a>
+    </div>
+
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2026 Healthy Saudi Cuisine</p>
+</footer>
+
+<script>
+  const form = document.getElementById('signupForm');
+  const input = document.getElementById('profileImage');
+  const preview = document.getElementById('profilePreview');
+
+  input.addEventListener('change', () => {
+    const file = input.files && input.files[0];
+    if (!file) return;
+    preview.src = URL.createObjectURL(file);
+  });
+
+  form.addEventListener('submit', async () => {
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName  = document.getElementById('lastName').value.trim();
+    const email     = document.getElementById('email').value.trim();
+
+    let imageDataUrl = "images/default-user.png";
+
+    const file = input.files && input.files[0];
+    if (file) {
+      imageDataUrl = await new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.readAsDataURL(file);
+      });
+    }
+
+    localStorage.setItem('user_firstName', firstName);
+    localStorage.setItem('user_lastName', lastName);
+    localStorage.setItem('user_email', email);
+    localStorage.setItem('user_image', imageDataUrl);
+  });
+</script>
+
+</body>
+</html>
