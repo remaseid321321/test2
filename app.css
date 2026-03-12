@@ -1213,3 +1213,6 @@ nav a.add-recipe-btn {
 @media (max-width: 768px) {
   .ingredient-row, .step-row { grid-template-columns: 1fr; }
 }
+body{
+background:red;
+}
