@@ -2,110 +2,119 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Dashboard - Min Darna</title>
-<link rel="stylesheet" href="app.css">
-  
+  <link rel="stylesheet" href="app.css">
 </head>
 <body>
 
 <header class="main-header">
-
-    <div class="logo-area">
-        <img src="photo/logo.jpeg" alt="Logo">
-        <div>
-            <h1>من دارنا</h1>
-            <span class="tagline">Healthy Saudi Cuisine</span>
-        </div>
+  <div class="logo-area">
+    <img src="photo/logo.jpeg" alt="Logo">
+    <div>
+      <h1>من دارنا</h1>
+      <span class="tagline">Healthy Saudi Cuisine</span>
     </div>
+  </div>
 
-    <nav>
-        <a href="user.html">Home</a>
-        <a href="my-recipes.html">My Recipes</a>
-        <a href="add-recipe.html" class="add-recipe-btn">Add Recipe</a>
-        <a href="index.html" class="sign-out">Sign Out</a>
-    </nav>
-
+  <nav>
+    <a href="user.html">Home</a>
+    <a href="my-recipes.html">My Recipes</a>
+    <a href="add-recipe.html" class="add-recipe-btn">Add Recipe</a>
+    <a href="index.html" class="sign-out">Sign Out</a>
+  </nav>
 </header>
 
-<section>
-    <h2>Welcome, <span id="userFirstName">Admin</span></h2>
-  <h2>Admin Dashboard</h2>
-  <div class="info-card">
-      <p><strong>Name:</strong> Lama Salem</p>
-      <p><strong>Email:</strong> Lama@healthyrecipes.com</p>
+<section class="section-box">
+  <h2>Welcome, <span id="userFirstName">Admin</span></h2>
+  <h3>Admin Dashboard</h3>
+
+  <div class="block">
+    <p><strong>Name:</strong> Lama Salem</p>
+    <p><strong>Email:</strong> Lama@healthyrecipes.com</p>
   </div>
 </section>
 
-<section>
+<section class="section-box">
   <h3>Pending Recipe Reports</h3>
-  <table>
-    <thead>
-      <tr>
-        <th>Recipe</th>
-        <th>Recipe Creator</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a href="view-recipe.html" class="link-strong">Jareesh</a></td>
-        <td>
-          <img src="photo/user.jpg" width="40" height="40" alt="User">
-          Sarah Ahmed
-        </td>
-        <td>
-          <form action="admin.html" class="admin-actions-form">
-            <div class="radio-group">
-                <label class="radio-option">
-                    <input type="radio" name="action" value="block" required> Block User
-                </label>
-                <label class="radio-option">
-                    <input type="radio" name="action" value="dismiss"> Dismiss Report
-                </label>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Recipe</th>
+          <th>Recipe Creator</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <a href="view-recipe.html"><strong>Jareesh</strong></a>
+          </td>
+          <td>
+            <div class="creator-cell">
+              <img src="photo/user.jpg" alt="User" class="creator-img">
+              <span>Sarah Ahmed</span>
             </div>
-            <button type="submit" class="apply-btn">Submit Action</button>
-          </form>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+          </td>
+          <td>
+            <form action="admin.html" class="admin-actions-form">
+              <div class="radio-group">
+                <label class="radio-option">
+                  <input type="radio" name="action" value="block" required>
+                  Block User
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="action" value="dismiss">
+                  Dismiss Report
+                </label>
+              </div>
+              <button type="submit" class="apply-btn">Submit Action</button>
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </section>
 
-<section>
+<section class="section-box">
   <h3>Blocked Users</h3>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>John Ali</td>
-        <td>john@email.com</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John Ali</td>
+          <td>john@email.com</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </section>
 
 <footer class="main-footer">
-    <div class="footer-content">
-        <p>© 2026 Min Darna – Healthy Saudi Cuisine</p>
-        <p>Inspired by Saudi home kitchens with a healthy twist 🌿</p>
-    </div>
+  <div class="footer-content">
+    <p>© 2026 Min Darna – Healthy Saudi Cuisine</p>
+    <p>Inspired by Saudi home kitchens with a healthy twist 🌿</p>
+  </div>
 </footer>
 
 <script>
-    window.onload = function() {
-        const firstName = localStorage.getItem('firstName');
-        if (firstName) {
-            document.getElementById('userFirstName').textContent = firstName;
-        }
-    };
+  window.onload = function() {
+    const firstName = localStorage.getItem('firstName');
+    if (firstName) {
+      document.getElementById('userFirstName').textContent = firstName;
+    }
+  };
 </script>
 
 </body>
 </html>
-
